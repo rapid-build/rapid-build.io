@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- 4.4.2
+notifications:
+  email:
+    on_success: always
+install: true # this skips running npm install
+deploy:
+  - provider: heroku
+    api_key:
+      secure: Df+lEpFm/pUX/5cIbfn60YEtjflqtgC9e8UzWDjdDRdU1V2pklCgIrum9U4Lqta0jAt3p0foqJ6xRCc0J2Dq52HJZYqLigrzzqh/nudnBHtNwvdR6zhlb37U2JJPHYGHUvajhT0Doeox5V/l4TbCoZugNHlFOCM0NL5lkNaxZxDowKnZ9oOm/VcaeaPG3FOkY2FhonbuMglxKLjRjNm+hadWshNbjB/nt9TAgkZLGMnAdFY+hwJShWkko2xZvD/lwT8Ia2Rwbet3omyMX7BS9O+sxv8NIk1h1Edy4V1rOdh9apiWpL5aJJdCCu7Vlvl7aQDYdNHKgcw14D6QBFS/kuyyJY1jV83vZDLl9NWJdBqyR6/1v8/KXOor0HTYmmTSfoEh6kpAff41hpavlJqm3uMdnMzjcQvg85CBS7OdWLK+UXukq3tmygFqB+B91amjnoaxhdnhFhsJ7AAqdZyHlGgmpVzfzCknDut19oZCXDLAFqRrPqavAbEOsyiW1zvAICR5con5WPxCt7X8z01snbsnc2XqfW9JMuqKzLTjxQ0nJ2J4iW8EsOGd9IefXlxlFA4LenrCr2x2MQ8gWGzBc8JnpXkVdicEE34cCqZW2cEorsn5xe/Jk9EIPtTwFoJF8RnqpL8DUxtk1qNcZqqF6WizOsVTBTt+I4zPw5xPpLk=
+    app: rapid-build-docs-staging
+    on:
+      tags: true

@@ -1,0 +1,30 @@
+{
+  "name": "rapid-build-docs",
+  "version": "0.69.3",
+  "description": "Documentation website for rapid-build.",
+  "homepage": "http://rapid-build.io/",
+  "author": {
+    "name": "Judd Younce",
+    "email": "jyounce@yahoo.com",
+    "url": "https://github.com/jyounce"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jyounce/rapid-build-docs"
+  },
+  "engines": {
+    "node": "4.4.2"
+  },
+  "scripts": {
+    "start": "node server/rapid-build/start-server",
+    "stop": "node server/rapid-build/stop-server",
+    "postinstall": "node scripts/postinstall"
+  },
+  "dependencies": {
+    "asyncawait": "1.0.3",
+    "colors": "1.1.2",
+    "coffee-script": "1.10.0",
+    "del": "2.2.2",
+    "extract-zip": "1.5.0"
+  }
+}
