@@ -1,3 +1,14 @@
+# root folders
+# ============
+/src/
+
+# root dot files
+# ==============
+/.gitignore
+/.travis.yml
+
 # root files
 # ==========
+/bower.json
 /rapid-build.cson
+/README.md
