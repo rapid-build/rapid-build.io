@@ -1,6 +1,7 @@
 # root folders
 # ============
 /src/
+/src/pack-docs/
 
 # root dot files
 # ==============

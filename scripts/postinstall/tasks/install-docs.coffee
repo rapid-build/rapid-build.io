@@ -5,7 +5,7 @@ module.exports = (paths) ->
 
 	# tasks
 	# =====
-	unpackDist = require "#{paths.subTasks}/unpack-dist"
+	unpackDist = require "#{paths.tasks}/unpack-dist"
 
 	# run tasks
 	# =========
