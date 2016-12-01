@@ -18,7 +18,7 @@
   "scripts": {
     "start": "node server/rapid-build/start-server",
     "stop": "node server/rapid-build/stop-server",
-    "postinstall": "node scripts/postinstall"
+    "heroku-postbuild": "node scripts/postinstall"
   },
   "dependencies": {
     "asyncawait": "1.0.3",
