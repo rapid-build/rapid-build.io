@@ -1,6 +1,7 @@
 # root folders
 # ============
 /src/
+/scripts/bump/
 /scripts/pack-docs/
 
 # root dot files
@@ -13,3 +14,4 @@
 /bower.json
 /rapid-build.cson
 /README.md
+/CHANGELOG.md
