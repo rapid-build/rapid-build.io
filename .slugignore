@@ -1,5 +1,6 @@
 # root folders
 # ============
+/artifacts/
 /src/
 /scripts/bump/
 /scripts/pack-docs/
