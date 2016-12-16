@@ -125,7 +125,7 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 				<a target="_blank" href="https://github.com/bevry/cson/blob/master/README.md">cson</a>,
 				json or js file.'
 	,
-		label: '<a target="_blank" href="https://github.com/jyounce/rapid-build/blob/master/docs/rapid-build.cson">Example</a>
+		label: '<a target="_blank" href="https://github.com/jyounce/rapid-build-docs/blob/master/rapid-build.cson">Example</a>
 				build options used to create this site.'
 	]
 	example:
