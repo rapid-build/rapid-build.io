@@ -6,8 +6,7 @@ angular.module('rapid-build').directive 'rbIcon', [->
 		return unless kind
 
 		switch true
-			when kind.indexOf('fa-')  is 0 then scope.icon = 'fa '
-			when kind.indexOf('ion-') is 0 then scope.icon = 'icon '
+			when kind.indexOf('fa-') is 0 then scope.icon = 'fa '
 			else scope.icon = 'glyphicon glyphicon-'
 
 		# options

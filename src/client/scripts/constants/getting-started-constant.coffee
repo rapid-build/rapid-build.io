@@ -11,7 +11,7 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 				</a>'
 	,
 		label: '<a target="_blank" href="https://nodejs.org/">
-					<rb:icon kind="ion-social-nodejs"></rb:icon> Node.js
+					Node.js
 				</a>'
 		info: 'version >= 4.0.0'
 	]
@@ -80,8 +80,8 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 		"""
 , # =================================================================
 	label: 'Quick Start'
-	icon:  'ion-ios-redo'
-	iconSize: 'large'
+	icon:  'fa-rocket'
+	# iconSize: 'large'
 	info:  'option'
 	html:
 		class: items2: info: 'parens'
