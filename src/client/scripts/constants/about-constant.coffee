@@ -44,6 +44,9 @@ angular.module('rapid-build').constant 'ABOUT', [
 		items: [
 			label: '<a target="_blank" href="http://bower.io/">bower</a>'
 			info:  'client'
+		,
+			label: '<a target="_blank" href="https://www.npmjs.com/">npm</a>'
+			info:  'client and server'
 		]
 	]
 , # =================================================================
@@ -85,18 +88,21 @@ angular.module('rapid-build').constant 'ABOUT', [
 	html:
 		class:
 			items2: info: 'sep parens'
-			items3: info: 'sep parens'
+			items3: info: 'parens'
 	items: [
+		label: 'One Build for All Your Projects'
+		items: [
+			label: 'No more reinventing the wheel.'
+		,
+			label: 'Use it to build all your projects.'
+			info: 'client and server'
+		]
+	,
 		label: 'Decoupled Build System'
 		items: [
 			label: 'Your build system is no longer coupled with your source code.'
 		,
 			label: 'Development becomes easier because your project structure is clear and concise.'
-		]
-	,
-		label: 'One Build for All Your Projects'
-		items: [
-			label: 'No more reinventing the wheel.'
 		]
 	]
 , # =================================================================

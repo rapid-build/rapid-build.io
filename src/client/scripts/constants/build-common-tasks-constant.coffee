@@ -35,6 +35,11 @@ angular.module('rapid-build').constant 'BUILD_COMMON_TASKS', [
 					(files listed in
 					<a target="_blank" href="https://github.com/bower/spec/blob/master/json.md">bower.json</a>
 					main property)'
+		,
+			label: 'node modules'
+			info:  '@dir server
+					(node_modules directory installed via server
+					<a href="/getting-started#directory-structure">package.json</a>)'
 		]
 	,
 		label: 'Compile src files to the dist directory:'

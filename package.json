@@ -13,7 +13,7 @@
     "url": "https://github.com/jyounce/rapid-build-docs"
   },
   "engines": {
-    "node": "4.4.2"
+    "node": "6.9.4"
   },
   "scripts": {
     "bump": "node scripts/bump && npm run pack-docs",

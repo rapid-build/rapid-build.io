@@ -864,30 +864,6 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			}
 		"""
 , # =================================================================
-	label: 'server'
-	icon:  'fa-cog'
-	html:
-		class: items2: list: 'small'
-	items: [
-		label: 'node_modules'
-		info:  '@type array of strings'
-		items: [
-			label: 'Node modules to copy to dist/server/node_modules/'
-		]
-	]
-	example:
-		label: 'Example'
-		info:  '<a href="/getting-started#rapid-build.json">for rapid-build.json</a>'
-		lang:  'js'
-		size:  'small'
-		code:  """
-			{
-				server: {
-					node_modules: ['cors']
-				}
-			}
-		"""
-, # =================================================================
 	label: 'spa'
 	icon:  'fa-cog'
 	html:

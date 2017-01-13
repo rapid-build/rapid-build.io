@@ -23,7 +23,7 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 		headings: items2: false
 	items: [
 		label: 'One time install.'
-		info:  'the install is fairly big'
+		info:  'the install is pretty big'
 	,
 		label: 'Use it for building multiple projects.'
 	]
@@ -68,14 +68,14 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 			│   │   └── coffee, es6 or js
 			│   ├── views/
 			│   │   └── html
-			│   └── spa.html # (optional, see build options spa.src.filePath)
+			│   └── spa.html # (see build options spa.src.filePath)
 			└── server/
 			    ├── test/
 			    │   └── coffee, es6 or js
-			    └── routes.{coffee,es6,js,ts} # (optional, see build options dist.server.fileName)
-			nodes_modules/ # (generated folder via package.json)
-			bower.json
-			package.json # (required)
+			    ├── package.json # (for server node modules)
+			    └── routes.{coffee,es6,js,ts} # (see build options dist.server.fileName)
+			bower.json # (for client bower components)
+			package.json # (required - must have name and version)
 			rapid-build.json # (build options - can be cson, json or js file)
 		"""
 , # =================================================================
