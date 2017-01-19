@@ -9,6 +9,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		info:  '@type string, @default \'1.x\''
 		items: [
 			label: 'The version of angular to load.'
+			info:  '<a target="_blank" href="http://semver.org/">semver version</a>'
 		,
 			icon:  'fa-exclamation-circle'
 			label: 'Currently the build does not support angular 2
@@ -22,7 +23,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		,
 			label: 'Value for ng-app in
 					<a href="#spa" rb-scroll>spa.html</a> or angular\'s
-					<a href="#angular.bootstrap" rb-scroll> bootstrap</a>.'
+					<a href="#angular.bootstrap" rb-scroll>bootstrap</a>.'
 		]
 	,
 		label: 'modules'

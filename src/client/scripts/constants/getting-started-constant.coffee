@@ -68,13 +68,13 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 			│   │   └── coffee, es6 or js
 			│   ├── views/
 			│   │   └── html
+			│   ├── bower.json # (for bower components)
 			│   └── spa.html # (see build options spa.src.filePath)
 			└── server/
 			    ├── test/
 			    │   └── coffee, es6 or js
 			    ├── package.json # (for server node modules)
 			    └── routes.{coffee,es6,js,ts} # (see build options dist.server.fileName)
-			bower.json # (for client bower components)
 			package.json # (required - must have name and version)
 			rapid-build.json # (build options - can be cson, json or js file)
 		"""

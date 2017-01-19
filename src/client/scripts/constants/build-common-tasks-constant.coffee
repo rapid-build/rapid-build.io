@@ -9,7 +9,8 @@ angular.module('rapid-build').constant 'BUILD_COMMON_TASKS', [
 		headings: items2: false
 	items: [
 		label: 'Install bower components.'
-		info:  'if they aren\'t installed'
+		info:  'if they aren\'t installed via client
+				<a href="/getting-started#directory-structure">bower.json</a>'
 	,
 		label: 'Copy src files to the dist directory:'
 		items: [
