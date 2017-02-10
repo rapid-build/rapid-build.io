@@ -325,6 +325,75 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		,
 			label: 'Provide if your server\'s entry script isn\'t \'routes.js\''
 		]
+	,
+		label: 'pack.enable'
+		info:  '@type boolean, @default false'
+		items: [
+			icon:  'fa-exclamation-circle'
+			label: 'This is the only pack option required.'
+		,
+			label: 'Set to true to pack the
+					<a href="/getting-started#directory-structure">dist directory</a>
+					once the build completes.'
+		,
+			label: 'Pack means the build will create a zip, tar or tgz
+					file from the dist directory and place it in your
+					project\'s root.'
+		]
+	,
+		label: 'pack.format'
+		info:  '@type string, @default \'zip\''
+		items: [
+			label: 'By default it creates a zip file once the build completes.'
+		,
+			label: 'Format options:'
+			items: [
+				label: '<a target="_blank" href="https://en.wikipedia.org/wiki/Zip_(file_format)">zip</a>'
+				info:  'default, creates dist.zip'
+			,
+				label: '<a target="_blank" href="https://en.wikipedia.org/wiki/Tar_(computing)">tar</a>'
+				info:  'tarball, creates dist.tar'
+			,
+				label: '<a target="_blank" href="https://en.wikipedia.org/wiki/Gzip">tgz</a>'
+				info:  'gzipped tarball, creates dist.tgz'
+			]
+		]
+	,
+		label: 'pack.fileName'
+		info:  '@type string, @default \'dist\''
+		items: [
+			label: 'Name of the packed file.'
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'Leave the file extension off.'
+		,
+			label: 'Example, app.zip will be created if you supple \'app\'.'
+		]
+	,
+		label: 'pack.glob'
+		info:  '@type string or array of strings, @default \'dist/**\''
+		items: [
+			label: 'This determines what gets packed from the dist directory.'
+		,
+			label: 'By default all the dist directory\'s contents gets packed.'
+		,
+			icon:  'fa-exclamation-circle'
+			label: '<a target="_blank" href="https://git.io/vDzFO">Glob paths</a>
+					must be relative to the dist directory.'
+			items: [
+				label: 'Do not include \'dist/\' in the beginning of your patterns.'
+			,
+				label: 'Example, to only include the client directory\'s contents supple \'client/**\'.'
+			]
+		]
+	,
+		label: 'pack.includeBase'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'By default the packed file contains the dist directory\'s contents.'
+		,
+			label: 'Set to true to also include the dist directory in the packed file.'
+		]
 	]
 	example:
 		label: 'Example'
@@ -350,6 +419,13 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 						dir: 'backend',
 						test: { dir: 'tests' },
 						fileName: 'app.js'
+					},
+					pack: {
+						enable: true,
+						format: 'tgz',
+						fileName: 'app',
+						glob: 'client/**',
+						includeBase: true
 					}
 				}
 			}
