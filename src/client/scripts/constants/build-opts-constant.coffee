@@ -367,7 +367,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			icon:  'fa-exclamation-circle'
 			label: 'Leave the file extension off.'
 		,
-			label: 'Example, app.zip will be created if you supple \'app\'.'
+			label: 'Example, app.zip will be created if you supply \'app\'.'
 		]
 	,
 		label: 'pack.glob'
@@ -383,7 +383,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			items: [
 				label: 'Do not include \'dist/\' in the beginning of your patterns.'
 			,
-				label: 'Example, to only include the client directory\'s contents supple \'client/**\'.'
+				label: 'Example, to only include the client directory\'s contents supply \'client/**\'.'
 			]
 		]
 	,
