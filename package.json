@@ -1,6 +1,6 @@
 {
   "name": "rapid-build-docs",
-  "version": "0.71.0",
+  "version": "0.72.0",
   "description": "Documentation website for rapid-build.",
   "homepage": "http://rapid-build.io/",
   "author": {
@@ -16,15 +16,13 @@
     "node": "6.9.4"
   },
   "scripts": {
-    "bump": "node scripts/bump && npm run pack-docs",
+    "bump": "node scripts/bump && rapid-build prod pack",
     "start": "node server/rapid-build/start-server",
     "stop": "node server/rapid-build/stop-server",
-    "pack-docs": "node scripts/pack-docs",
     "heroku-postbuild": "node scripts/postinstall"
   },
   "devDependencies": {
-    "package-json": "2.4.0",
-    "zip-dir": "1.0.2"
+    "package-json": "2.4.0"
   },
   "dependencies": {
     "asyncawait": "1.0.3",
