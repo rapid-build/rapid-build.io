@@ -1104,7 +1104,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		size:  'small'
 		code:  """
 			{
-				dist: {
+				src: {
 					dir: 'source',
 					client: {
 						dir: 'frontend',
