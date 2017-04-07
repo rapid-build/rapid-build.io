@@ -116,7 +116,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			{
 				angular: {
 					version: '1.5.x',
-					modulelabel: 'rapid-build',
+					moduleName: 'rapid-build',
 					modules: ['ngAnimate'],
 					bootstrap: true,
 					ngFormify: true,
