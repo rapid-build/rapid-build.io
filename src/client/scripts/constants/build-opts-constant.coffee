@@ -1018,6 +1018,32 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			icon:  'fa-exclamation-circle'
 			label: 'File path must be relative to the src/client/ directory.'
 		]
+	,
+		label: '[scripts|styles].attrs'
+		info:  '@type object, @default see below'
+		items: [
+			label: 'Add additional attributes to the link (styles) and script
+					tags that the build outputs in spa.html.'
+		,
+			label: 'Or modify the default attributes that the build places
+					on the link and script tags.'
+		,
+			label: 'To create a valueless attribute, set it\'s value to null.'
+		,
+			label:  'Build defaults for:'
+			items: [
+				label: 'script tags: { src: \'path to .js file\' }'
+			,
+				label: 'link tags: { rel: \'stylesheet\', href: \'path to .css file\' }'
+			]
+		,
+			label: 'Build output example:'
+			items: [
+				label: '&lt;script src="/scripts/super.js"&gt;&lt;/script&gt;'
+			,
+				label: '&lt;link rel="stylesheet" href="/styles/awesome.css"&gt;'
+			]
+		]
 	]
 	example:
 		label: 'Example'
@@ -1036,6 +1062,17 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					},
 					src: {
 						filePath: 'spa.html'
+					},
+					scripts: {
+						attrs: {
+							async: null
+						}
+					},
+					styles: {
+						attrs: {
+							rel: 'import',
+							type: 'css'
+						}
 					}
 				}
 			}
