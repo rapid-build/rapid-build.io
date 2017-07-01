@@ -8,11 +8,11 @@ module.exports = (paths, rbVersion) ->
 	# tasks
 	# =====
 	tasks =
-		bumpDocPkg: ->
-			docsPkg = require paths.docsPkg
-			docsPkg.version = rbVersion
-			fse.writeJsonAsync(paths.docsPkg, docsPkg).then ->
-				return "Bumped package.json"
+		bumpDocPkg: (pkgPath, file) ->
+			pkg = require paths[pkgPath]
+			pkg.version = rbVersion
+			fse.writeJsonAsync(paths[pkgPath], pkg).then ->
+				"Bumped #{file}"
 
 		bumpDocsConst: ->
 			docsConstPath = "#{paths.root}/src/client/scripts/constants/rb-constant.coffee"
@@ -30,7 +30,8 @@ module.exports = (paths, rbVersion) ->
 	# run tasks
 	# =========
 	runTasks = async ->
-		res.push await tasks.bumpDocPkg()
+		res.push await tasks.bumpDocPkg 'docsPkg', 'package.json'
+		res.push await tasks.bumpDocPkg 'docsPkgLock', 'package-lock.json'
 		res.push await tasks.bumpDocsConst()
 		res.filter(Boolean).join '\n'
 

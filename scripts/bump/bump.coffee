@@ -12,10 +12,11 @@ module.exports = ->
 	# paths
 	# =====
 	paths =
-		root:    rootPath,
-		tasks:   path.join dir, 'tasks'
-		helpers: path.join rootPath, 'scripts', 'helpers'
-		docsPkg: path.join rootPath, 'package.json'
+		root:        rootPath,
+		tasks:       path.join dir, 'tasks'
+		helpers:     path.join rootPath, 'scripts', 'helpers'
+		docsPkg:     path.join rootPath, 'package.json'
+		docsPkgLock: path.join rootPath, 'package-lock.json'
 
 	# docs package.json
 	# =================
