@@ -2,7 +2,7 @@
   "name": "rapid-build-docs",
   "version": "2.0.0",
   "description": "Documentation website for rapid-build.",
-  "homepage": "http://rapid-build.io/",
+  "homepage": "https://rapid-build.io/",
   "author": {
     "name": "Judd Younce",
     "email": "jyounce@yahoo.com",
@@ -13,7 +13,7 @@
     "url": "https://github.com/jyounce/rapid-build-docs"
   },
   "engines": {
-    "node": "6.9.4"
+    "node": "6.11.0"
   },
   "scripts": {
     "bump": "node scripts/bump && rapid-build prod pack",
