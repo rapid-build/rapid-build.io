@@ -29,7 +29,6 @@ module.exports = (opts={}) ->
 			host = req.headers['x-forwarded-host'] or req.headers.host
 			redirectUrl = "https://#{host}#{req.originalUrl}"
 			return res.redirect 301, redirectUrl
-			return next()
 
 		# 'post, put, etc'
 		result =
