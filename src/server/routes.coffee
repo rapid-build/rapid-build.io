@@ -8,6 +8,7 @@ module.exports = (server) ->
 		opts =
 			ignoreHostnames: [
 				'localhost'
+				'jyounce-mac.local'
 				'demo.rapid-build.io'
 				'staging.rapid-build.io'
 			]
