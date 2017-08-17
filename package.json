@@ -13,7 +13,7 @@
     "url": "https://github.com/jyounce/rapid-build-docs"
   },
   "engines": {
-    "node": "6.11.0"
+    "node": "6.11.2"
   },
   "scripts": {
     "bump": "node scripts/bump && rapid-build prod pack",
