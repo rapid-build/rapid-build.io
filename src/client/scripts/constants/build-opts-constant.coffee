@@ -198,6 +198,37 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 	html:
 		class: items2: list: 'small'
 	items: [
+		label: 'htmlScripts.client.enable'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to compile
+					<a target="_blank" href="https://www.w3schools.com/js/js_whereto.asp">inline html scripts</a>
+					that have es6 code to es5.'
+			info:  'does not apply to external js files'
+		,
+			label: 'Applies to html files in
+					<a href="/getting-started#directory-structure">src/client/views/</a>
+					directory.'
+			icon:  'fa-exclamation-circle'
+		,
+			label: 'Useful for creating web components that
+					work with unsupported browsers like IE11.'
+		,
+			label: 'Need to also compile
+					<a target="_blank" href="https://www.polymer-project.org/2.0/docs/es6">Polymer 2</a>?
+					Set these build options:'
+			items: [
+				label: '<a href="build-options#exclude.from.dist[client|server]">exclude.from.dist.client</a>
+						=
+						[\'bower_components/polymer/**\']'
+			,
+				label: '<a href="build-options#extra.compile.client[coffee|es6|htmlScripts|less|sass]">extra.compile.client.htmlScripts</a>
+						=
+						[\'bower_components/polymer/{polymer*.html,lib/**}\']'
+
+			]
+		]
+	,
 		label: 'typescript[client|server].enable'
 		info:  '@type boolean, @default false'
 		items: [
@@ -236,6 +267,11 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		code:  """
 			{
 				compile: {
+					htmlScripts: {
+						client: {
+							enable: true
+						}
+					},
 					typescript: {
 						client: {
 							enable: true,
@@ -579,7 +615,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 	html:
 		class: items2: list: 'small'
 	items: [
-		label: 'compile.client[coffee|es6|less|sass]'
+		label: 'compile.client[coffee|es6|htmlScripts|less|sass]'
 		info:  '@type array of strings'
 		items: [
 			label: 'Array of file paths.'
@@ -648,6 +684,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 						client: {
 							coffee: ['libs/coffee/utilities.coffee'],
 							es6: ['libs/es6/utilities.es6'],
+							htmlScripts: ['bower_components/polymer/{polymer*.html,lib/**}'],
 							less: ['bower_components/bootstrap/less/bootstrap.less'],
 							sass: ['libs/sass/utilities.scss']
 						},
