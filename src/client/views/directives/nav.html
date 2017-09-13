@@ -1,8 +1,10 @@
-<div class="rb-nav" ng-class="[
+<div class="rb-nav"
+	 rb-clickaway="isResponsive && respHide()"
+	 ng-class="[
 		kind,
 		isResponsive ? 'responsive' : '',
 		isResponsive && !resHidden ? 'nav-open' : ''
-	].join(' ')">
+	 ].join(' ')">
 	<div class="shell">
 		<a href
 		   tabindex="0"

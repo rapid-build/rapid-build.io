@@ -32,9 +32,12 @@ angular.module('rapid-build').directive 'rbNav', ['$location', '$timeout', 'anch
 			scope.isResponsive = attrs.responsive isnt undefined # valueless attr
 			scope.resHidden    = resHidden if scope.isResponsive
 
+			scope.respHide = ->
+				scope.resHidden = resHidden
+
 			scope.respToggle = ->
 				return scope.resHidden = '' if scope.resHidden is resHidden
-				scope.resHidden = resHidden
+				scope.respHide()
 
 			scope.respAction = ->
 				return unless scope.isResponsive
