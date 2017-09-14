@@ -1,42 +1,39 @@
 angular.module('rapid-build').directive 'rbClickaway', ['$rootElement', '$parse',
 	($rootElement, $parse) ->
-		# Link
+		# LINK
 		# ====
 		link = (scope, $elm, attrs) ->
 			return unless !!attrs.rbClickaway
 
-			# flags
-			# =====
-			clickaway =
-				id:     null  # :number | null
-				enable: false # :boolean
+			# clickaway (cw)
+			# =========
+			cw =
+				active: null # :null | boolean
+				fn: $parse attrs.rbClickaway # expression to function
 
-			# event handlers
-			# ==============
+			# handlers
+			# ========
 			handlers =
-				elm: ->
-					clickaway.id = scope.$id
-					clickaway.enable = true
+				trigger: -> # fires before clickaway
+					cw.active = false
 
-				rootElm: (event) ->
-					return if clickaway.id is null
-					return if clickaway.id isnt scope.$id
-					return clickaway.enable = false if clickaway.enable
-					fn = $parse attrs.rbClickaway
-					scope.$apply ->
-						fn scope, $event: event
-						clickaway.id = null
+				clickaway: (event) ->
+					return if cw.active is null # trigger not clicked
+					return cw.active = true unless cw.active # trigger clicked
+					scope.$apply -> # fire clickaway
+						cw.active = null # deactivate clickaway
+						cw.fn scope, $event: event
 
-			# event listeners
-			# ===============
-			$elm[0].addEventListener 'click', handlers.elm
-			$rootElement[0].addEventListener 'click', handlers.rootElm
+			# listeners
+			# =========
+			$elm[0].addEventListener 'click', handlers.trigger
+			$rootElement[0].addEventListener 'click', handlers.clickaway
 
 			# destroy
 			# =======
 			scope.$on '$destroy', ->
-				$elm[0].addEventListener 'click', handlers.elm
-				$rootElement[0].removeEventListener 'click', handlers.rootElm
+				$elm[0].removeEventListener 'click', handlers.trigger
+				$rootElement[0].removeEventListener 'click', handlers.clickaway
 
 		# API
 		# ===
