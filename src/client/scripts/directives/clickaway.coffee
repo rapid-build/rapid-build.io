@@ -26,14 +26,14 @@ angular.module('rapid-build').directive 'rbClickaway', ['$rootElement', '$parse'
 
 			# listeners
 			# =========
-			$elm[0].addEventListener 'click', handlers.trigger
-			$rootElement[0].addEventListener 'click', handlers.clickaway
+			$elm.on 'click touchstart', handlers.trigger
+			$rootElement.on 'click touchstart', handlers.clickaway
 
 			# destroy
 			# =======
 			scope.$on '$destroy', ->
-				$elm[0].removeEventListener 'click', handlers.trigger
-				$rootElement[0].removeEventListener 'click', handlers.clickaway
+				$elm.off 'click touchstart', handlers.trigger
+				$rootElement.off 'click touchstart', handlers.clickaway
 
 		# API
 		# ===
