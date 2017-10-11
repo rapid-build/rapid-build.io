@@ -618,58 +618,70 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		label: 'compile.client[coffee|es6|htmlScripts|less|sass]'
 		info:  '@type array of strings'
 		items: [
-			label: 'Array of file paths.'
+			label: 'Array of file paths relative
+					to src/client/ directory.'
 		,
 			label: 'Additional files to compile to dist/client/
 					directory that the build didn\'t compile.'
-		,
-			icon:  'fa-exclamation-circle'
-			label: 'File paths must be relative to the
-					src/client/ directory.'
 		]
 	,
 		label: 'compile.server[less|sass]'
 		info:  '@type array of strings'
 		items: [
-			label: 'Array of file paths.'
+			label: 'Array of file paths relative
+					to src/server/ directory.'
 		,
 			label: 'Additional files to compile to dist/server/
 					directory that the build didn\'t compile.'
-		,
-			icon:  'fa-exclamation-circle'
-			label: 'File paths must be relative to the
-					src/server/ directory.'
 		]
 	,
 		label: 'copy[client|server]'
 		info:  '@type array of strings'
 		items: [
-			label: 'Array of file paths.'
+			label: 'Array of file paths relative to
+					src/[client|server]/ directory.'
 		,
 			label: 'Additional files to copy to
-					dist/client/ and or dist/server/
-					directory that the build didn\'t copy.'
-		,
-			icon:  'fa-exclamation-circle'
-			label: 'File paths must be relative to the
-					src/client/ or src/server/ directory.'
+					dist/[client|server]/ directory
+					that the build didn\'t copy.'
 		]
 	,
 		label: 'minify.client[css|js]'
 		info:  '@type array of strings'
 		items: [
-			label: 'Array of file paths.'
+			label: 'Array of file paths relative
+					to dist/client/ directory.'
 		,
 			label: 'Additional files to minify in dist/client/
 					directory that the build didn\'t minify.'
 		,
 			icon:  'fa-exclamation-circle'
-			label: 'By default, the build does not minify
-					files in libs or bower_components directories.'
+			label: 'By default, the build minifies
+					files in dist/client/[scripts,styles]/ directories.'
+		]
+	,
+		label: 'watch[client|server]'
+		info:  '@type array of strings'
+		items: [
+			label: 'Array of file paths relative to
+					src/[client|server]/ directory.'
+		,
+			label: 'Additional files to watch
+					in src/[client|server]/ directory
+					that the build didn\'t watch.'
+		,
+			label: 'Does support watching symlinks.'
 		,
 			icon:  'fa-exclamation-circle'
-			label: 'File paths must be relative to the
-					dist/client/ or dist/server/ directory.'
+			label: 'Additional watches only copy files, does not compile.'
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'By default, the build watches files in src/'
+			items: [
+				label: 'client/[images,scripts,styles,views]/'
+			,
+				label: 'server/ (only script files, not json)'
+			]
 		]
 	]
 	example:
@@ -702,6 +714,10 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 							css: ['bower_components/bootstrap/less/bootstrap.css'],
 							js: ['libs/utilities/strings.js']
 						}
+					},
+					watch: {
+						client: ['node_modules/my-pkg/**'],
+						server: ['**/*.json']
 					}
 				}
 			}
