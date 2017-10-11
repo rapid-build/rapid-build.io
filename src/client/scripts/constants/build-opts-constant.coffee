@@ -621,8 +621,8 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			label: 'Array of file paths relative
 					to src/client/ directory.'
 		,
-			label: 'Additional files to compile to dist/client/
-					directory that the build didn\'t compile.'
+			label: 'Additional files to compile to
+					dist/client/ that the build didn\'t compile.'
 		]
 	,
 		label: 'compile.server[less|sass]'
@@ -631,8 +631,8 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			label: 'Array of file paths relative
 					to src/server/ directory.'
 		,
-			label: 'Additional files to compile to dist/server/
-					directory that the build didn\'t compile.'
+			label: 'Additional files to compile to
+					dist/server/ that the build didn\'t compile.'
 		]
 	,
 		label: 'copy[client|server]'
@@ -642,8 +642,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					src/[client|server]/ directory.'
 		,
 			label: 'Additional files to copy to
-					dist/[client|server]/ directory
-					that the build didn\'t copy.'
+					dist/[client|server]/ that the build didn\'t copy.'
 		]
 	,
 		label: 'minify.client[css|js]'
@@ -652,12 +651,12 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			label: 'Array of file paths relative
 					to dist/client/ directory.'
 		,
-			label: 'Additional files to minify in dist/client/
-					directory that the build didn\'t minify.'
+			label: 'Additional files to minify in
+					dist/client/ that the build didn\'t minify.'
 		,
 			icon:  'fa-exclamation-circle'
 			label: 'By default, the build minifies
-					files in dist/client/[scripts,styles]/ directories.'
+					files in dist/client/[scripts,styles]/.'
 		]
 	,
 		label: 'watch[client|server]'
@@ -667,13 +666,14 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					src/[client|server]/ directory.'
 		,
 			label: 'Additional files to watch
-					in src/[client|server]/ directory
-					that the build didn\'t watch.'
+					in src/[client|server]/ that
+					the build didn\'t watch.'
 		,
-			label: 'Does support watching symlinks.'
+			label: 'Supports watching symlinks.'
 		,
 			icon:  'fa-exclamation-circle'
-			label: 'Additional watches only copy files, does not compile.'
+			label: 'Additional watches only
+					copy files, does not compile.'
 		,
 			icon:  'fa-exclamation-circle'
 			label: 'By default, the build watches files in src/'
