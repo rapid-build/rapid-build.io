@@ -9,6 +9,7 @@ module.exports = (server) ->
 			ignoreHostnames: [
 				'localhost'
 				'jyounce-mac.local'
+				'yokun-mac.local'
 				'demo.rapid-build.io'
 				'staging.rapid-build.io'
 			]

@@ -1,19 +1,27 @@
 {
-  "name": "rapid-build-docs",
+  "name": "rapid-build.io-proj",
   "version": "3.0.1",
-  "description": "Documentation website for rapid-build.",
+  "description": "Documentation website for npm package rapid-build.",
   "homepage": "https://rapid-build.io/",
-  "author": {
-    "name": "Judd Younce",
-    "email": "jyounce@yahoo.com",
-    "url": "https://github.com/jyounce"
+  "license": "MIT",
+  "engines": {
+    "node": "6.11.5"
   },
+  "contributors": [
+    {
+      "name": "Judd Younce",
+      "email": "jyounce@yahoo.com",
+      "url": "https://github.com/jyounce"
+    },
+    {
+      "name": "Yevgeniy Okun",
+      "email": "yevgeniyokun@gmail.com",
+      "url": "https://github.com/yokun"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jyounce/rapid-build-docs"
-  },
-  "engines": {
-    "node": "6.11.2"
+    "url": "https://github.com/rapid-build/rapid-build.io"
   },
   "scripts": {
     "bump": "node scripts/bump && rapid-build prod pack",
