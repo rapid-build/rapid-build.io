@@ -11,4 +11,4 @@ deploy:
       secure: oi3k54lvw8wWyZKCtM8Rg6YuMMBLuQtOrfctTEdpefbAYg3UlE4MZ2otAPJHJfm9N1B/RVo/z0gEyx/nuRZLcVvT2tl3vILa86gj6JSIYWtsvz30x+joGis6cmsCDPdVG1vt43Uip129pll5Ca+QCBUQoQFEx3dpLSDUu/be+g1ATUO/jx4N3Rj/ZXQrxlquWfL2hwcBJaSozPrRBfO5bR6ZpVqJo8fpV518vtH2admKUbIadn7uWjpOmrKBfvjjkvnuZAQGMw5ksLk8t6HbifTG0AnG/7UxHUba+KdPkuIuGI4UGOGiRsqZRcdxTFKskWL9Eb7+7RDNSMWfW9CqzZjj6V1fzLUOy+erTVcoJZIFq9dHDlA0KISnm8Xhoh1CEIPI1h6xqua/2v8Ruc+zJmpVxq2dpby7VjT8GNn7S5+rrUiCmgzRxkJ5nZ+jG6vBC3PnOT4hvxcsAZs5VoDYopIjtokC94KEhNzTiokUPyjeSNudqR5ZmjjqgcDP4PpMXe5fMm0Kl44ZDkCG9hskl1Wh2AkIVqvivIB1tYkkb6yDko1LLvCpaRVHDZmW+NUQT7XKGLEey6J4KZyyU7Yviyhct0cnhvwNERSNFkZHpgLaf3Vn+wFOIZcYHLzGDIiK0eScubSo+RFagms/9k4XFHfNOYOGlgSOQXvxOGOH1gc=
     app: rapid-build-io-staging
     on:
-      branch: transfer-fixes
+      tags: true
