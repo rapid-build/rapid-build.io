@@ -74,7 +74,7 @@ angular.module('rapid-build').constant 'BUILD_TYPES',
 		,
 			label: '<a target="_blank" href="https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2">Cache bust</a>
 					dist/client/ files.'
-			info:  'css, js, gif, jpg, jpeg and png'
+			info:  'css, js, gif, jpg, jpeg, png and svg'
 		,
 			label: 'Minify dist/server/ js files.'
 		]

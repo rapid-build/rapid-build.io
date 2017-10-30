@@ -57,7 +57,7 @@ angular.module('rapid-build').constant 'GETTING_STARTED', [
 			├── client/
 			│   ├── bower_components/ # (generated folder via bower.json)
 			│   ├── images/
-			│   │   └── gif, jpg, jpeg, png, etc..
+			│   │   └── gif, jpg, jpeg, png, svg, etc..
 			│   ├── libs/
 			│   │   └── # (3rd party libraries that aren't bower components)
 			│   ├── scripts/

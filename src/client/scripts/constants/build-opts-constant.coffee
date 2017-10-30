@@ -769,7 +769,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			label: 'Adds an md5 checksum to the client files
 					before their extension.'
 		,
-			label: 'Cache busted file types are: css, js, gif, jpg, jpeg and png'
+			label: 'Cache busted file types are: css, js, gif, jpg, jpeg, png and svg'
 		]
 	,
 		label: 'css.fileName'
