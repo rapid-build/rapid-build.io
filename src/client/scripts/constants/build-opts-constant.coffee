@@ -93,6 +93,9 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		info:  '@type boolean, @default false'
 		items: [
 			label: 'Set to true to use angular\'s template cache to serve views.'
+		,
+			label: 'See <a href="build-options#minify.html.templateCache">here</a>
+					to disable angular\'s template cache for prod build.'
 		]
 	,
 		label: 'templateCache.urlPrefix'
@@ -774,6 +777,10 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			label: 'replaces template variable with
 					<a target="_blank" href="https://mzl.la/24ne8EJ">template literal</a>
 			 		containing contents of ../views/xxx.html'
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'Does not inline views from angular\'s
+					<a href="build-options#angular.templateCache.dev">template cache</a>.'
 		]
 	# ,
 	# 	label: 'htmlExternalCss.client.enable'
@@ -875,6 +882,9 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		items: [
 			label: 'Set to false to not use angular\'s
 					template cache for your html files.'
+		,
+			label: 'See <a href="build-options#angular.templateCache.dev">here</a>
+					to enable angular\'s template cache for dev build.'
 		]
 	,
 		label: 'js.fileName'
