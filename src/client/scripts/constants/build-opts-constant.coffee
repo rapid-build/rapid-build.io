@@ -760,6 +760,22 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 	html:
 		class: items2: list: 'small'
 	items: [
+		label: 'htmlExternalCss.client.enable'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to inline html
+					<a target="_blank" href="https://mzl.la/2jHqKsJ">external</a> stylesheets.'
+		,
+			label: '&lt;!-- example html file --&gt;<br>
+					&lt;link rel="stylesheet" href="../styles/xxx.css"&gt;'
+		,
+			label: 'replaces css
+					<a target="_blank" href="https://mzl.la/1qNoGJ1">link</a>
+					tag with
+					<a target="_blank" href="https://mzl.la/2hQFt42">style</a>
+					tag containing the contents of ../styles/xxx.css'
+		]
+	,
 		label: 'jsHtmlImports.client.enable'
 		info:  '@type boolean, @default false'
 		items: [
@@ -775,22 +791,6 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					<a target="_blank" href="https://mzl.la/24ne8EJ">template literal</a>
 			 		containing the contents of ../views/xxx.html'
 		]
-	,
-		label: 'htmlExternalStylesheets.client.enable'
-		info:  '@type boolean, @default false'
-		items: [
-			label: 'Set to true to inline html
-					<a target="_blank" href="https://mzl.la/2jHqKsJ">external</a> stylesheets.'
-		,
-			label: '&lt;!-- example html file --&gt;<br>
-					&lt;link rel="stylesheet" href="../styles/xxx.css"&gt;'
-		,
-			label: 'replaces css
-					<a target="_blank" href="https://mzl.la/1qNoGJ1">link</a>
-					tag with
-					<a target="_blank" href="https://mzl.la/2hQFt42">style</a>
-					tag containing the contents of ../styles/xxx.css'
-		]
 	]
 	example:
 		label: 'Example'
@@ -800,12 +800,12 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		code:  """
 			{
 				inline: {
-					jsHtmlImports: {
+					htmlExternalCss: {
 						client: {
 							enable: true
 						}
 					},
-					htmlExternalStylesheets: {
+					jsHtmlImports: {
 						client: {
 							enable: true
 						}
