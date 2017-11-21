@@ -755,6 +755,65 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			}
 		"""
 , # =================================================================
+	label: 'inline'
+	icon:  'fa-cog'
+	html:
+		class: items2: list: 'small'
+	items: [
+		label: 'jsHtmlImports.client.enable'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to inline js html imports.'
+		,
+			label: '// example js file<br>
+					import template from \'../views/xxx.html\';<br>
+					return template;'
+		,
+			label: 'removes html import statement'
+		,
+			label: 'replaces template variable with
+					<a target="_blank" href="https://mzl.la/24ne8EJ">template literal</a>
+			 		containing the contents of ../views/xxx.html'
+		]
+	,
+		label: 'htmlExternalStylesheets.client.enable'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to inline html
+					<a target="_blank" href="https://mzl.la/2jHqKsJ">external</a> stylesheets.'
+		,
+			label: '&lt;!-- example html file --&gt;<br>
+					&lt;link rel="stylesheet" href="../styles/xxx.css"&gt;'
+		,
+			label: 'replaces css
+					<a target="_blank" href="https://mzl.la/1qNoGJ1">link</a>
+					tag with
+					<a target="_blank" href="https://mzl.la/2hQFt42">style</a>
+					tag containing the contents of ../styles/xxx.css'
+		]
+	]
+	example:
+		label: 'Example'
+		info:  '<a href="/getting-started#rapid-build.json">for rapid-build.json</a>'
+		lang:  'js'
+		size:  'small'
+		code:  """
+			{
+				inline: {
+					jsHtmlImports: {
+						client: {
+							enable: true
+						}
+					},
+					htmlExternalStylesheets: {
+						client: {
+							enable: true
+						}
+					}
+				}
+			}
+		"""
+, # =================================================================
 	label: 'minify'
 	icon:  'fa-cog'
 	html:
