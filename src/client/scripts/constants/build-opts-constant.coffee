@@ -840,7 +840,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		]
 	,
 		label: 'css.splitMinFile'
-		info:  '@type boolean, @default true'
+		info:  '@type boolean, @default false'
 		items: [
 			label: 'Split styles.min.css into multiple files
 					if the selector count > 4,095'
