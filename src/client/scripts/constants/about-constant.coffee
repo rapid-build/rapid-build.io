@@ -67,9 +67,9 @@ angular.module('rapid-build').constant 'ABOUT', [
 		label: 'Dist'
 		info:  'distributable'
 		items: [
-			label: 'This is where your distributable package/folder will be built.'
+			label: 'This is where your distributable package will be built.'
 		,
-			label: 'After your package/folder is built, it\'s ready to be deployed.'
+			label: 'After your package is built, it\'s ready to be deployed.'
 		]
 	,
 		label: 'Client'

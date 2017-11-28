@@ -94,7 +94,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		items: [
 			label: 'Set to true to use angular\'s template cache to serve views.'
 		,
-			label: 'See <a href="build-options#minify.html.templateCache">here</a>
+			label: 'See <a href="#minify.html.templateCache" rb-scroll>here</a>
 					to disable angular\'s template cache for prod build.'
 		]
 	,
@@ -221,11 +221,11 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					<a target="_blank" href="https://www.polymer-project.org/2.0/docs/es6">Polymer 2</a>?
 					Set these build options:'
 			items: [
-				label: '<a href="build-options#exclude.from.dist[client|server]">exclude.from.dist.client</a>
+				label: '<a href="#exclude.from.dist[client|server]" rb-scroll>exclude.from.dist.client</a>
 						=
 						[\'bower_components/polymer/**\']'
 			,
-				label: '<a href="build-options#extra.compile.client[coffee|es6|htmlScripts|less|sass]">extra.compile.client.htmlScripts</a>
+				label: '<a href="#extra.compile.client[coffee|es6|htmlScripts|less|sass]" rb-scroll>extra.compile.client.htmlScripts</a>
 						=
 						[\'bower_components/polymer/{polymer*.html,lib/**}\']'
 
@@ -780,24 +780,8 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		,
 			icon:  'fa-exclamation-circle'
 			label: 'Does not inline views from angular\'s
-					<a href="build-options#angular.templateCache.dev">template cache</a>.'
+					<a href="#angular.templateCache.dev" rb-scroll>template cache</a>.'
 		]
-	# ,
-	# 	label: 'htmlExternalCss.client.enable'
-	# 	info:  '@type boolean, @default false'
-	# 	items: [
-	# 		label: 'Set to true to inline html
-	# 				<a target="_blank" href="https://mzl.la/2jHqKsJ">external</a> stylesheets.'
-	# 	,
-	# 		label: '&lt;!-- example html file --&gt;<br>
-	# 				&lt;link rel="stylesheet" href="../styles/xxx.css"&gt;'
-	# 	,
-	# 		label: 'replaces css
-	# 				<a target="_blank" href="https://mzl.la/1qNoGJ1">link</a>
-	# 				tag with
-	# 				<a target="_blank" href="https://mzl.la/2hQFt42">style</a>
-	# 				tag containing contents of ../styles/xxx.css'
-	# 	]
 	]
 	example:
 		label: 'Example'
@@ -818,6 +802,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 , # =================================================================
 	label: 'minify'
 	icon:  'fa-cog'
+	info:  'applies to <a href="/build-types#prod">prod build</a>'
 	html:
 		class: items2: list: 'small'
 	items: [
@@ -883,35 +868,53 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			label: 'Set to false to not use angular\'s
 					template cache for your html files.'
 		,
-			label: 'See <a href="build-options#angular.templateCache.dev">here</a>
+			label: 'See <a href="#angular.templateCache.dev" rb-scroll>here</a>
 					to enable angular\'s template cache for dev build.'
-		]
-	,
-		label: 'js.fileName'
-		info:  '@type string, @default \'scripts.min.js\''
-		items: [
-			label: 'Provide to name the minified js file differently.'
-		]
-	,
-		label: 'js.mangle'
-		info:  '@type boolean, @default true'
-		items: [
-			label: 'Set to false to not mangle your js files.'
-		,
-			label: 'For details
-					<a target="_blank" href="http://lisperator.net/uglifyjs/mangle">click here</a>.'
-		]
-	,
-		label: 'js.scripts'
-		info:  '@type boolean, @default true'
-		items: [
-			label: 'Set to false to not minify your js files.'
 		]
 	,
 		label: 'spa.file'
 		info:  '@type boolean, @default true'
 		items: [
 			label: 'Set to false to not minify your spa.html file.'
+		]
+	,
+		label: 'server.json.enable'
+		info:  '@type boolean, @default true'
+		items: [
+			label: 'Set to false to not minify your server json files.'
+		]
+	,
+		label: 'client.js.fileName'
+		info:  '@type string, @default \'scripts.min.js\''
+		items: [
+			label: 'Provide to name the minified js file differently.'
+		]
+	,
+		label: '[client|server].js.enable'
+		info:  '@type boolean, @default true'
+		items: [
+			label: 'Set to false to not minify your js files.'
+		]
+	,
+		label: '[client|server].js.es6'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true if your js files are written in ES6+.'
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'Unless you enable this option, the build expects your js files to be written in ES5.'
+		]
+	,
+		label: '[client|server].js.options'
+		info:  '@type object, @default {}'
+		items: [
+			label: 'Find available options here:
+					<a target="_blank" href="https://git.io/vFbk9">ES5</a>
+					or
+					<a target="_blank" href="https://git.io/vFbkj">ES6+</a>.',
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'ES5 is the default unless you enable <a href="#minify.[client|server].js.es6" rb-scroll>ES6+</a>.'
 		]
 	]
 	example:
@@ -935,13 +938,19 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 							removeComments: true
 						}
 					},
-					js: {
-						fileName: 'rapid-build.min.js',
-						mangle : false,
-						scripts: false
-					},
 					spa: {
 						file: false
+					},
+					client: {
+						js: {
+							es6: true,
+							options: { mangle: false },
+							fileName: 'rapid-build.min.js'
+						}
+					},
+					server: {
+						js: { enable: false },
+						json: { enable: false }
 					}
 				}
 			}
@@ -949,6 +958,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 , # =================================================================
 	label: 'order'
 	icon:  'fa-cog'
+	info:  'client only'
 	html:
 		class: items2: list: 'small'
 	items: [
@@ -1060,6 +1070,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 , # =================================================================
 	label: 'spa'
 	icon:  'fa-cog'
+	info:  'single page application'
 	html:
 		class: items2: list: 'small'
 	items: [

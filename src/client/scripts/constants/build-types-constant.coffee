@@ -48,7 +48,7 @@ angular.module('rapid-build').constant 'BUILD_TYPES',
 	, # =================================================================
 		label: 'prod'
 		icon:  'fa-wrench'
-		info: 'creates your distributable package/folder'
+		info: 'creates your distributable package'
 		html:
 			class: items2: info: 'parens', list: 'ordered'
 			headings: items2: false
