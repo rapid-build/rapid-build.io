@@ -928,7 +928,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					cacheBust: false,
 					css: {
 						fileName: 'rapid-build.min.css',
-						splitMinFile: false,
+						splitMinFile: true,
 						styles: false
 					},
 					html: {
