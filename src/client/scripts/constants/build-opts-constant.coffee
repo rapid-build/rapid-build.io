@@ -772,11 +772,11 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					import template from \'../views/xxx.html\';<br>
 					return template;'
 		,
-			label: 'removes html import statement'
+			label: 'Removes html import statement.'
 		,
-			label: 'replaces template variable with
+			label: 'Replaces template variable with
 					<a target="_blank" href="https://mzl.la/24ne8EJ">template literal</a>
-			 		containing contents of ../views/xxx.html'
+			 		containing contents of ../views/xxx.html.'
 		,
 			icon:  'fa-exclamation-circle'
 			label: 'Does not inline views from angular\'s
