@@ -29,12 +29,14 @@
 				<span bind-html-compile="item3.label"></span>
 				<em ng-if="!!item3.info" bind-html-compile="item3.info" class="sub"
 					ng-class="[item.html.class.items3.info ? item.html.class.items3.info : 'parens'].join(' ')"></em>
+				<em ng-if="!!item3.code" bind-html-compile="item3.code" class="sub-code"></em>
 				<ul ng-if="item3.items">
 					<li ng-repeat="item4 in item3.items">
 						<rb:icon ng-if="!!item4.icon" kind="{{item4.icon}}" size="{{item4.iconSize}}" strong="{{!!item4.iconWeight}}"></rb:icon>
 						<span bind-html-compile="item4.label"></span>
 						<em ng-if="!!item4.info" bind-html-compile="item4.info" class="sub"
 							ng-class="[item.html.class.items4.info ? item.html.class.items4.info : 'parens'].join(' ')"></em>
+						<em ng-if="!!item4.code" bind-html-compile="item4.code" class="sub-code"></em>
 					</li>
 				</ul>
 			</li>

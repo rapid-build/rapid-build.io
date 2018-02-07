@@ -332,7 +332,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		items: [
 			label: 'Set to false to create relative urls.'
 		,
-			label: 'By default, the build creates
+			label: 'By default the build creates
 					<a target="_blank" href="https://goo.gl/jK1i0L">urls absolute</a>
 					to the root of your domain for:'
 			items: [
@@ -658,7 +658,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					dist/client/ that the build didn\'t minify.'
 		,
 			icon:  'fa-exclamation-circle'
-			label: 'By default, the build minifies
+			label: 'By default the build minifies
 					files in dist/client/[scripts,styles]/.'
 		]
 	,
@@ -679,7 +679,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					copy files, does not compile.'
 		,
 			icon:  'fa-exclamation-circle'
-			label: 'By default, the build watches files in src/'
+			label: 'By default the build watches files in src/'
 			items: [
 				label: 'client/[images,scripts,styles,views]/'
 			,
@@ -763,13 +763,71 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 	html:
 		class: items2: list: 'small'
 	items: [
+		label: 'htmlAssets.enable'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to inline html assets.'
+			info:  'useful when creating
+					<a target="_blank" href="https://www.webcomponents.org/">web components</a>'
+		,
+			label: 'Example in html file:'
+			code:  '&lt;div&gt;&lt;script src="/scripts/main.js"&gt;&lt;/script&gt;&lt;div&gt;'
+		,
+			label: 'Inline main.js\'s contents inside script tag resulting in:'
+			code:  '&lt;div&gt;&lt;script&gt;console.log(\'Hello world!\')&lt;/script&gt;&lt;div&gt;'
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'Does not inline views in angular\'s
+					<a href="#angular.templateCache.dev" rb-scroll>template cache</a>.'
+		]
+	,
+		label: 'htmlAssets.dev'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to run on <a href="/build-types#dev">dev build</a>.'
+		,
+			label: 'By default
+					the build inline\'s html assets on
+					<a href="/build-types#default">default</a>
+					and <a href="/build-types#prod">prod build</a>.'
+			info:  '<a href="#inline.htmlAssets.enable" rb-scroll>if enabled</a>'
+		]
+	,
+		label: 'htmlAssets.options.attribute'
+		info:  '@type string'
+		items: [
+			label: 'By default all html assets will be inlined unless an attribute name is provided.'
+		,
+			label: 'Place this attribute name on html tags/assets you wish to inline.'
+		,
+			label: 'Example in html file:'
+			code:  '&lt;div&gt;&lt;script inline src="/scripts/main.js"&gt;&lt;/script&gt;&lt;div&gt;'
+		,
+			icon:  'fa-exclamation-circle'
+			label: 'Attribute will be removed from tag after inlining.'
+		]
+	,
+		label: 'htmlAssets.options.svgAsImage'
+		info:  '@type boolean, @default false'
+		items: [
+			label: 'Set to true to convert
+					&lt;img src="*.svg"&gt; to &lt;img&gt;
+					and not &lt;svg&gt; tag.'
+		]
+	,
+		label: 'htmlAssets.options.ignore'
+		info:  '@type array of strings'
+		items: [
+			label: 'Disable inlining based on file extension and/or html tag.'
+		]
+	,
 		label: 'jsHtmlImports.client.enable'
 		info:  '@type boolean, @default false'
 		items: [
 			label: 'Set to true to inline js html imports.'
 		,
-			label: '// example js file<br>
-					import template from \'../views/xxx.html\';<br>
+			label: 'Example in js file:'
+			code:  'import template from \'../views/xxx.html\';<br>
 					return template;'
 		,
 			label: 'Removes html import statement.'
@@ -779,7 +837,7 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 			 		containing contents of ../views/xxx.html.'
 		,
 			icon:  'fa-exclamation-circle'
-			label: 'Does not inline views from angular\'s
+			label: 'Does not inline views in angular\'s
 					<a href="#angular.templateCache.dev" rb-scroll>template cache</a>.'
 		]
 	]
@@ -791,6 +849,18 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 		code:  """
 			{
 				inline: {
+					htmlAssets: {
+						dev: true,
+						enable: true,
+						options: {
+							attribute: 'inline',
+							svgAsImage: true,
+							ignore: [
+								'img', 'link', 'object', 'script',
+								'css', 'js', 'json', 'gif', 'jpg', 'jpeg', 'png', 'svg'
+							]
+						}
+					},
 					jsHtmlImports: {
 						client: {
 							enable: true
