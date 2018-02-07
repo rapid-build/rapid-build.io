@@ -2,10 +2,8 @@
 # BUMP VERSION THEN RUN CHANGELOG
 # ===============================
 module.exports = ->
+	q        = require 'q'
 	path     = require 'path'
-	async    = require 'asyncawait/async'
-	await    = require 'asyncawait/await'
-	res      = []
 	dir      = __dirname
 	rootPath = path.resolve dir, '..', '..'
 
@@ -24,32 +22,36 @@ module.exports = ->
 
 	# helpers
 	# =======
-	require("#{paths.helpers}/add-colors")()
 	log = require "#{paths.helpers}/log"
 
 	# tasks
 	# =====
-	getRbVersion = require "#{paths.tasks}/get-rb-version"
-	bumpPkg      = require "#{paths.tasks}/bump-pkg"
+	api =
+		bumpPkg:      require "#{paths.tasks}/bump-pkg"
+		getRbVersion: require "#{paths.tasks}/get-rb-version"
 
 	# run tasks
 	# =========
-	runTasks = async ->
-		rbVersion = await getRbVersion paths # latest version
-		skipMsg   = "Bump Skipped: rapid build's latest version v#{rbVersion} is the same as doc's"
-		return skipMsg if rbVersion is docsVersion
-		res.push "Version: #{rbVersion}"
-		res.push await bumpPkg paths, rbVersion
-		res.filter(Boolean).join '\n'
+	runTasks = ->
+		results = []
+		tasks = [
+			-> api.getRbVersion paths # latest version rapid-build
+			(rbVersion) ->
+				skipMsg = "Bump Skipped: rapid build's latest version v#{rbVersion} is the same as doc's"
+				return q skipMsg if rbVersion is docsVersion
+				results.push "Version: #{rbVersion}"
+				api.bumpPkg paths, rbVersion
+		]
+		tasks.reduce(q.when, q()).then (res) ->
+			results.push res
+			results.filter(Boolean).join '\n'
 
 	# run it!
 	# =======
-	runTasks()
-	.then (res) ->
+	runTasks().then (res) ->
 		log 'Docs Bumped'
 		return if !res || typeof res != 'string'
 		console.log res.attn
 	.catch (e) ->
 		log 'Bump Failed', 'error'
-		return if !e || typeof e != 'string'
-		console.log e.error
+		console.error e if e

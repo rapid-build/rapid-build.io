@@ -14,9 +14,8 @@ module.exports = (paths) ->
 	# tasks
 	# =====
 	runTask = ->
-		new Promise (resolve, reject) ->
-			del(delFiles, opts).then (_paths) ->
-				resolve 'Cleaned Up Host'
+		del(delFiles, opts).then (_paths) ->
+			'Cleaned Up Host'
 
 	# run it!
 	# =======

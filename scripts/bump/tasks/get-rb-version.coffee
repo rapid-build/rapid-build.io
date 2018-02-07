@@ -4,9 +4,8 @@ module.exports = (paths) ->
 	# task
 	# ====
 	runTask = ->
-		new Promise (resolve, reject) ->
-			pkgJson('rapid-build', 'latest').then (json) ->
-				resolve json.version
+		pkgJson('rapid-build', 'latest').then (json) ->
+			json.version
 
 	# run it!
 	# =======

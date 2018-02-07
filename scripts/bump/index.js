@@ -1,5 +1,6 @@
 /**********************************
  * BUMP VERSION THEN RUN CHANGELOG
  **********************************/
-require('coffee-script/register');
+require('coffeescript/register');
+require('../helpers/add-colors')();
 require(`${__dirname}/bump`)();

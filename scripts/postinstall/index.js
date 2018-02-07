@@ -1,5 +1,6 @@
 /*************************
  * DOCS SITE POST INSTALL
  *************************/
-require('coffee-script/register');
+require('coffeescript/register');
+require('../helpers/add-colors')();
 require(`${__dirname}/postinstall`)();
