@@ -673,6 +673,9 @@ angular.module('rapid-build').constant 'BUILD_OPTS', [
 					the build didn\'t watch.'
 		,
 			label: 'Supports watching symlinks.'
+			info:  'symlink
+					<a target="_blank" href="https://git.io/vrluA">globstars</a>
+					not supported on windows'
 		,
 			icon:  'fa-exclamation-circle'
 			label: 'Additional watches only
